@@ -1,0 +1,16 @@
+button,
+div,
+form,
+input {
+    margin: 10px;
+}
+
+.rating{
+    margin: 0px;
+    margin-right: 5px;
+    float: left;
+}
+
+p {
+    margin: 0px;
+}
