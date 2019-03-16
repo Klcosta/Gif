@@ -12,7 +12,6 @@ function renderButtons() {
     }
 }
 
-
 //FUNCTION TO CREATE A NEW BUTTON
 $("#find-gif").on("click", function (event) {
     event.preventDefault();
@@ -43,12 +42,29 @@ function displaygifs() {
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=F8ARbzWb2CHANbIZg7iveAAqvhJQeVGq"
     console.log(queryURL)
 
+    //define a variable to choose number of gifs
+    var x = 0;
+
+    //pull a new number for ten
+    var xstring = $("#number-input").val().trim();
+    console.log(xstring)
+    
+    //If you don't choose a number
+    if (xstring === "Choose number of Gifs"){
+        alert("please choose a number of Gifs")
+    }
+    //If you choose a number
+    else{
+    var x = parseInt(xstring)
+    console.log (x)
+    }
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response)
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < x; i++) {
             var a = $("<div class='rating'>");
             a.append("<p>" + response.data[i].rating + "</p>")
             a.append("<img datavalue='" + gif + i + "' class='gifbttn' src='" + response.data[i].images.fixed_height.url + "' data-still='" + response.data[i].images.fixed_height_still.url + "' data-animate='" + response.data[i].images.fixed_height.url + "' state='animate' >")
