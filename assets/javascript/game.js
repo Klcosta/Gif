@@ -1,4 +1,4 @@
-var gifs = ["United States", "Spain", "Argentina", "Japan", "Nigeria", "New Zealand"];
+var gifs = ["Parks and Rec", "Friends", "How I Met Your Mother", "Big Bang Theory", "This is US"];
 
 // FUNCTION TO DISPLAY THE BUTTONS
 function renderButtons() {
@@ -72,6 +72,12 @@ function pausegifs() {
         $(this).attr("state", "animate");
     }
 }
+
+//FUNCTION TO CLEAR GIFS
+$("#clear").on("click", function(event){
+    event.preventDefault();
+    $("#add-gif").empty()
+})
 
 $(document).on("click", ".bttn", displaygifs);
 $(document).on("click", ".gifbttn", pausegifs);
