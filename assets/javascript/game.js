@@ -39,7 +39,7 @@ function displaygifs() {
     console.log(gif)
 
     // Here we construct our URL
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=F8ARbzWb2CHANbIZg7iveAAqvhJQeVGq"
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=F8ARbzWb2CHANbIZg7iveAAqvhJQeVGq"
     console.log(queryURL)
 
     //define a variable to choose number of gifs
@@ -48,7 +48,7 @@ function displaygifs() {
     //pull a new number for ten
     var xstring = $("#number-input").val().trim();
     console.log(xstring)
-    
+
     //If you don't choose a number
     if (xstring === "Choose number of Gifs"){
         alert("please choose a number of Gifs")
